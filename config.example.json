@@ -1,0 +1,30 @@
+{
+  "_说明": "复制本文件为 config.local.json 后按需修改。只需保留你要覆盖的字段，其余走内置默认值。改完重启即可生效，无需重新 build。",
+
+  "_TRIGGERS说明": "每条规则 = 一组触发词 keywords + 可选 skill。命中触发词后，后面的文字当参数/问题。带 skill 直接跑该技能；不带 skill 就是普通问答。匹配取最具体（更长）的触发词。",
+  "TRIGGERS": [
+    { "keywords": ["问问克劳德", "帮我问"] },
+    { "keywords": ["问问贾维斯"], "skill": "scan-put" }
+  ],
+
+  "_CLAUDE_MODEL说明": "模型别名 haiku/sonnet/opus 或完整模型 ID；默认 haiku（语音问答又快又省）",
+  "CLAUDE_MODEL": "haiku",
+
+  "_CLAUDE_BIN说明": "claude 可执行文件；默认按 PATH 查找。装在非标准位置时填绝对路径",
+  "CLAUDE_BIN": "claude",
+
+  "_ANSWER_MAX_CHARS说明": "答案字数上限，>0 时要求控制在 N 字以内，0 = 不限制；对普通问答和 skill 都生效",
+  "ANSWER_MAX_CHARS": 0,
+
+  "THINKING_PROMPT": "正在思考中，请稍后",
+  "_THINKING_REPEAT_MS说明": "等 claude 返回期间每隔多少毫秒补播一次提示，0 关闭；建议 ≥6000",
+  "THINKING_REPEAT_MS": 8000,
+
+  "_POLL_INTERVAL_MS说明": "对话轮询间隔（毫秒），默认 1000",
+  "POLL_INTERVAL_MS": 1000,
+
+  "CLAUDE_TIMEOUT_MS": 120000,
+  "SKILL_TIMEOUT_MS": 240000,
+  "_SKILL_PERMISSION_MODE说明": "跑 skill 时给 claude 的权限模式；语音无人审批，需非交互",
+  "SKILL_PERMISSION_MODE": "bypassPermissions"
+}
