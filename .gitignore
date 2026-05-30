@@ -1,0 +1,18 @@
+# 登录凭证 / 本地状态（含 serviceToken、passToken、设备配置）——切勿提交
+data/
+**/data/
+
+# 个人配置（触发词、模型等私人设置）——仅本地，参考 config.example.json
+config.local.json
+
+# Claude Code 本地设置（含本机绝对路径、权限规则）——仅本地
+.claude/
+
+# Node
+node_modules/
+dist/
+
+# 杂项
+.DS_Store
+*.log
+
